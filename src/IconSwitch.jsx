@@ -4,7 +4,9 @@ import MaterialIcon, { colorPalette } from "material-icons-react";
 
 function IconSwitch({ icon, onSwitch }) {
   console.log(icon);
-  return <MaterialIcon icon={icon} size="large" onClick={() => onSwitch()} />;
+  return (
+    <MaterialIcon key={uuidv4()} icon={icon} size="large" onClick={(icon) => onSwitch(icon)} />
+  );
 }
 
 export default IconSwitch;
