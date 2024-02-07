@@ -3,13 +3,12 @@ import CardsView from "./CardsView";
 import ListView from "./ListView";
 import IconSwitch from "./IconSwitch";
 import { products } from "./products";
-import { icon } from "./icons";
 
 class StoreClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      icon: icon,
+      icon: "view_list",
       products: products,
       proj: products,
     };
@@ -33,9 +32,9 @@ class StoreClass extends React.Component {
           onSwitch={() => this.handleClick(this.state.icon)}
         />
         {this.state.icon === "view_list" ? (
-          <CardsView cards={this.state.products} />
-        ) : (
           <ListView items={this.state.products} />
+        ) : (
+          <CardsView cards={this.state.products} />
         )}
       </div>
     );
